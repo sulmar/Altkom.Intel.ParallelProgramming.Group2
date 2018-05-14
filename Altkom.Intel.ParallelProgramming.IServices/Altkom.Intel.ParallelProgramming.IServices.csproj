@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0C377EE-8AD2-450C-8727-499BEAC71E79}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Altkom.Intel.ParallelProgramming.Client</RootNamespace>
-    <AssemblyName>Altkom.Intel.ParallelProgramming.Client</AssemblyName>
+    <ProjectGuid>{AE5DCDF1-C971-4953-8117-F0C79EF8AD89}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Altkom.Intel.ParallelProgramming.IServices</RootNamespace>
+    <AssemblyName>Altkom.Intel.ParallelProgramming.IServices</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,16 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncAwaitTests.cs" />
-    <Compile Include="HelloWorldTest.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="IRobotsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskTests.cs" />
-    <Compile Include="ThreadPoolTests.cs" />
-    <Compile Include="ThreadTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgramming.Models\Altkom.Intel.ParallelProgramming.Models.csproj">
+      <Project>{6BA845D6-2111-4F8E-ABDC-48CCC8C1D781}</Project>
+      <Name>Altkom.Intel.ParallelProgramming.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
