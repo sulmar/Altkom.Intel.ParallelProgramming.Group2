@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Altkom.Intel.ParallelProgramming.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,6 +12,25 @@ namespace Altkom.Intel.ParallelProgramming.Client
 {
     class AsyncAwaitTests
     {
+        public static async Task GetRobotsTest()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:58686");
+
+                var response = await client.GetAsync("api/robots");
+
+                // Install-Package Microsoft.AspNet.WebApi.Client
+                var robots = await response.Content.ReadAsAsync<IList<Robot>>();
+
+                foreach (var robot in robots)
+                {
+                    Console.WriteLine(robot.Name);
+                }
+            }
+        }
+
+
         public static async Task AsyncAwaitTest()
         {
             int result1 = await CalculateAsync("http://www.intel.com");

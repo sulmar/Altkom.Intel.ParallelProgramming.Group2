@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RobotsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -276,6 +277,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgrammin.MockServices\Altkom.Intel.ParallelProgrammin.MockServices.csproj">
+      <Project>{3CBDB9F4-5F54-41F3-901D-0781C121C54B}</Project>
+      <Name>Altkom.Intel.ParallelProgrammin.MockServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgramming.IServices\Altkom.Intel.ParallelProgramming.IServices.csproj">
+      <Project>{AE5DCDF1-C971-4953-8117-F0C79EF8AD89}</Project>
+      <Name>Altkom.Intel.ParallelProgramming.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgramming.Models\Altkom.Intel.ParallelProgramming.Models.csproj">
+      <Project>{6BA845D6-2111-4F8E-ABDC-48CCC8C1D781}</Project>
+      <Name>Altkom.Intel.ParallelProgramming.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

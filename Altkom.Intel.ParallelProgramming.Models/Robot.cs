@@ -9,13 +9,14 @@ namespace Altkom.Intel.ParallelProgramming.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IList<ActionType> SuppportedActions { get; set; }
+        public ActionType SuppportedActions { get; set; }
     }
 
+    [Flags]
     public enum ActionType
     {
-        Terminate,
-        Move,
-        Wait
+        Terminate = 1,
+        Move = 2,
+        Wait = 4
     }
 }

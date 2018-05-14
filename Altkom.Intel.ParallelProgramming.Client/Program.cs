@@ -13,7 +13,12 @@ namespace Altkom.Intel.ParallelProgramming.Client
         {
             Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId}");
 
-            AsyncAwaitTests.AsyncAwaitTest();
+
+            Task.Run(()=>AsyncAwaitTests.GetRobotsTest());
+            Task.Run(() => AsyncAwaitTests.GetRobotsTest());
+            Task.Run(() => AsyncAwaitTests.GetRobotsTest());
+
+            // AsyncAwaitTests.AsyncAwaitTest();
 
             Console.WriteLine("next...");
 
