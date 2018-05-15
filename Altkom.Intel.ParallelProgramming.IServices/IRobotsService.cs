@@ -10,9 +10,8 @@ namespace Altkom.Intel.ParallelProgramming.IServices
     public interface IRobotsService
     {
         void Add(Robot robot);
-
         IList<Robot> Get();
-
         void Remove(int id);
+        Task<IList<Robot>> GetAsync();
     }
 }

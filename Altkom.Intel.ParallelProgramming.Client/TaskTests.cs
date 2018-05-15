@@ -34,9 +34,11 @@ namespace Altkom.Intel.ParallelProgramming.Client
 
         public static async Task ComplexDoWorkAsync()
         {
-            await DoWorkAsync();
+            var result1 = await DoWorkAsync().ConfigureAwait(false);
 
-            await DoWorkAsync();
+            var result2 = await DoWorkAsync();
+
+            Console.WriteLine(result1);
         }
 
 

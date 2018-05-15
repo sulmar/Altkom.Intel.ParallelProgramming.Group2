@@ -51,6 +51,8 @@
     <Compile Include="AsyncAwaitTests.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="HelloWorldTest.cs" />
+    <Compile Include="ParallelLinqTests.cs" />
+    <Compile Include="ParallelTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskTests.cs" />
@@ -62,6 +64,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgrammin.MockServices\Altkom.Intel.ParallelProgrammin.MockServices.csproj">
+      <Project>{3CBDB9F4-5F54-41F3-901D-0781C121C54B}</Project>
+      <Name>Altkom.Intel.ParallelProgrammin.MockServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altkom.Intel.ParallelProgramming.IServices\Altkom.Intel.ParallelProgramming.IServices.csproj">
+      <Project>{AE5DCDF1-C971-4953-8117-F0C79EF8AD89}</Project>
+      <Name>Altkom.Intel.ParallelProgramming.IServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Altkom.Intel.ParallelProgramming.Models\Altkom.Intel.ParallelProgramming.Models.csproj">
       <Project>{6BA845D6-2111-4F8E-ABDC-48CCC8C1D781}</Project>
       <Name>Altkom.Intel.ParallelProgramming.Models</Name>

@@ -3,6 +3,7 @@ using Altkom.Intel.ParallelProgramming.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Altkom.Intel.ParallelProgramming.Services.IServices
 {
@@ -41,6 +42,11 @@ namespace Altkom.Intel.ParallelProgramming.Services.IServices
             var robot = Get(id);
 
             robots.Remove(robot);
+        }
+
+        public Task<IList<Robot>> GetAsync()
+        {
+            return Task.Run(() => Get());
         }
     }
 }

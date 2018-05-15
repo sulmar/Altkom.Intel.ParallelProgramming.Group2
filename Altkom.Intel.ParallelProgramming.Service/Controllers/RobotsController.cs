@@ -4,6 +4,7 @@ using Altkom.Intel.ParallelProgramming.Services.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -25,10 +26,9 @@ namespace Altkom.Intel.ParallelProgramming.Service.Controllers
 
         //}
 
-
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
-            var robots = robotsService.Get();
+            var robots = await robotsService.GetAsync();
 
             return Ok(robots);
         }

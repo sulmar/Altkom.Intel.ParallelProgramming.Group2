@@ -13,7 +13,22 @@ namespace Altkom.Intel.ParallelProgramming.Client
         {
             Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId}");
 
-            TaskTests.TaskRunTest();
+            ParallelLinqTests.ParallelTest2();
+
+            //ParallelLinqTests.ParallelTest();
+
+            //ParallelLinqTests.ParallelTest();
+
+            //ParallelLinqTests.SequentialTest();
+
+            // ParallelTests.SafeForParallelTest();
+
+            // ParallelTests.UnsafeForParallelTest();
+
+
+            // Task.Run(()=>ParallelTests.ForSequentialTest());
+
+            // TaskTests.TaskRunTest();
 
             // TaskTests.CancelTaskTest();
 
@@ -31,7 +46,7 @@ namespace Altkom.Intel.ParallelProgramming.Client
 
             // AsyncAwaitTests.AsyncAwaitTest();
 
-            Console.WriteLine("next...");
+            //  Console.WriteLine("next...");
 
             //TaskTests.ContinueWithTaskTest();
             //TaskTests.ContinueWithTaskTest();
