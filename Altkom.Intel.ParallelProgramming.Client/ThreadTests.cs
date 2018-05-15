@@ -10,6 +10,48 @@ namespace Altkom.Intel.ParallelProgramming.Client
 {
     class ThreadTests
     {
+        public static void UsingTest()
+        {          
+            Thread thread = new Thread(AbortUsingTest);
+
+            thread.Start();
+
+            Console.WriteLine("Press any key to abort.");
+
+            Console.ReadKey();
+
+            thread.Abort();
+
+        }
+
+        private static void AbortUsingTest()
+        {
+            using (var calculator = new Calculator())
+            {
+                calculator.Calculate();
+
+              //  Thread.Sleep(TimeSpan.FromDays(1));
+            }
+        }
+
+        public static void AbortThreadTest()
+        {
+            Calculator calculator = new Calculator();
+
+            Thread thread = new Thread(() => calculator.Calculate());
+
+            thread.Start();
+
+            Console.WriteLine("Press any key to abort.");
+
+            Console.ReadKey();
+
+            thread.Abort();
+
+            Console.WriteLine("Press any key to abort.");
+            Console.ReadKey();
+        }
+
         public static void CreateThread()
         {
             Thread thread = new Thread(DoWork);

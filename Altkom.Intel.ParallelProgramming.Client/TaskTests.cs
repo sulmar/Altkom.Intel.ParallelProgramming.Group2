@@ -10,6 +10,57 @@ namespace Altkom.Intel.ParallelProgramming.Client
 {
     class TaskTests
     {
+
+        public static void TaskRunTest()
+        {
+            Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId} UI");
+
+        //    DoWorkAsync();
+
+            DoWorkAsync2();
+
+        }
+
+        public static Task<decimal> DoWorkAsync()
+        {
+            return Task.Run(() => DoWork());
+        }
+
+        public static Task<decimal> DoWorkAsync2()
+        {
+            return Task.FromResult(DoWork());
+        }
+
+
+        public static async Task ComplexDoWorkAsync()
+        {
+            await DoWorkAsync();
+
+            await DoWorkAsync();
+        }
+
+
+        public static decimal DoWork()
+        {
+            Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId} working...");
+
+            Thread.Sleep(TimeSpan.FromSeconds(3));
+
+            Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId} finished.");
+
+            return 100;
+        }
+
+
+        public static async Task CancelTaskTest()
+        { 
+            Calculator calculator = new Calculator();
+
+            await calculator.LongCalculateAsync();
+        }
+
+
+
         public static Task<int> CalculateAsync(string uri)
         {
             return Task.Run(() => Calculate(uri));
@@ -57,6 +108,32 @@ namespace Altkom.Intel.ParallelProgramming.Client
         public static void RunTaskTest()
         {
             var task = Task.Run(() => Download("http://www.intel.com"));
+        }
+
+
+
+        public static async Task CancelDownloadAsyncTest()
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource(100);
+
+            var content = await DownloadAsync("http://www.microsoft.com", cancellationTokenSource.Token);
+
+            Console.WriteLine(content);
+
+        }
+
+
+        public static async Task<string> DownloadAsync(string uri, CancellationToken token)
+        {
+            string content;
+
+            using (var client = new WebClient())
+            using (var registration = token.Register(() => client.CancelAsync()))
+            {
+                content = await client.DownloadStringTaskAsync(uri);
+            }
+
+            return content;
         }
 
 

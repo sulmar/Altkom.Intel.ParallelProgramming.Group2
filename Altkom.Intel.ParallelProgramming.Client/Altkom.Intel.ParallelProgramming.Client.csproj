@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncAwaitTests.cs" />
+    <Compile Include="Calculator.cs" />
     <Compile Include="HelloWorldTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
