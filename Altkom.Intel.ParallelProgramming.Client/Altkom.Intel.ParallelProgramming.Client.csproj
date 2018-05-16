@@ -51,10 +51,14 @@
     <Compile Include="AsyncAwaitTests.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="HelloWorldTest.cs" />
+    <Compile Include="ParallelAggregationTest.cs" />
     <Compile Include="ParallelLinqTests.cs" />
     <Compile Include="ParallelTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reactive\MyObserver.cs" />
+    <Compile Include="Reactive\ReactiveTests.cs" />
+    <Compile Include="Reactive\SimpleColdSource.cs" />
     <Compile Include="TaskTests.cs" />
     <Compile Include="ThreadPoolTests.cs" />
     <Compile Include="ThreadTests.cs" />

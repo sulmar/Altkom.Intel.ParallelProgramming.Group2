@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Altkom.Intel.ParallelProgramming.Client.Reactive;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,10 @@ namespace Altkom.Intel.ParallelProgramming.Client
     {
         static void Main(string[] args)
         {
+            ReactiveTests.ObserverAndObservableTest();
+
+           // ParallelAggregationTest.CalculateTest();
+
             Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId}");
 
             ParallelLinqTests.ParallelTest2();
