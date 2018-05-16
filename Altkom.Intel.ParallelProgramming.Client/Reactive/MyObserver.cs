@@ -8,19 +8,26 @@ namespace Altkom.Intel.ParallelProgramming.Client.Reactive
 {
     class MyObserver : IObserver<string>
     {
+        public string Name { get; private set; }
+
+        public MyObserver(string name)
+        {
+            this.Name = name;
+        }
+
         public void OnCompleted()
         {
-            Console.WriteLine("End of transmission");
+            Console.WriteLine($"[{Name}] End of transmission");
         }
 
         public void OnError(Exception error)
         {
-            Console.WriteLine($"Exception {error.Message}");
+            Console.WriteLine($"[{Name}] Exception {error.Message}");
         }
 
         public void OnNext(string value)
         {
-            Console.WriteLine($"Received value: {value}");
+            Console.WriteLine($"[{Name}] Received value: {value}");
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Altkom.Intel.ParallelProgramming.Client.Reactive
         {
             var source = new SimpleColdSource();
 
-            var observer1 = new MyObserver();
-            var observer2 = new MyObserver();
+            var observer1 = new MyObserver("Marcin");
+            var observer2 = new MyObserver("Bartek");
 
             using (var subscibtion = source.Subscribe(observer1))
             {

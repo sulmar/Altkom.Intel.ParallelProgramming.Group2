@@ -12,13 +12,35 @@ namespace Altkom.Intel.ParallelProgramming.Client
     {
         static void Main(string[] args)
         {
-            ReactiveTests.ObserverAndObservableTest();
+            MonitorCpu.Test();
 
-           // ParallelAggregationTest.CalculateTest();
+            // WindowTests.WindowTest();
+
+            //   WindowTests.BufferTimeTest();
+
+            // 6WindowTests.Test();
+
+            // FileWatcherTests.Test();
+
+            // MergeSourceTests.MergeIntervalTest();
+
+            // MergeSourceTests.MergeTest();
+
+            // MergeSourceTests.ConcatIntervalTest();
+
+            // MergeSourceTests.ConcatTest();
+
+            // TimeObservableTest.TimerTest();
+
+            // HotSourceTests.SubjectTest();
+
+            // ReactiveTests.ObserverAndObservableTest();
+
+            // ParallelAggregationTest.CalculateTest();
 
             Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId}");
 
-            ParallelLinqTests.ParallelTest2();
+            // ParallelLinqTests.ParallelTest2();
 
             //ParallelLinqTests.ParallelTest();
 
